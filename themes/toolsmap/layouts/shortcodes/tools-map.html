@@ -1,0 +1,23 @@
+<div class="tool-map">
+  {{ range .Site.Sections }}
+  <section class="tool-category" id="cat-{{ .Title}}">
+    <header> {{ .Title }} </header>
+    {{ range .Pages }}
+      <div class='card'>
+        <img class='card-img-top' src='https://res.cloudinary.com/eosdesignsystem/image/upload/v1602233106/SUSE/suse-eg.svg' alt='SUSE-logo' />
+        <div class='card-body'>
+          <h5 class='card-title'>
+            <a href="{{ .Page}}" >
+              {{ .Page.Title }}
+            </a>
+          </h5>
+          <p class='card-text'>{{ .Page.Params.tagline_1 }}</p>
+        </div>
+      </div>
+      <!-- <div class="tool-card" data-github="{{ .Page.Params.github }}">
+      {{ .Page.Title }}
+      </div> -->
+    {{ end }}
+  </section>
+  {{ end }}
+</div>

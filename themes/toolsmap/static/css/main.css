@@ -1,0 +1,29 @@
+.tool-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+}
+
+.tool-category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-gap: 12px;
+
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.tool-category > header {
+  grid-column: 1/7;
+  width: 100%;
+  background: light-grey;
+}
+
+.tool-card {
+  align-self: center;
+
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 96px;
+}

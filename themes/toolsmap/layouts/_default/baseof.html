@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{- partial "head.html" . -}}
+
+  </head>
+  <body>
+    {{- partial "main-menu.html" . -}}
+    {{- partial "mobile-menu.html" . -}}
+    <section class="content">
+        {{- partial "sub-menu.html" . -}}
+        <div class="container">
+        {{- .Content -}}
+        </div>
+    </section>
+    <footer class="footer-content js-footer-content">
+        {{- partial "footer.html" . -}}
+    </footer>
+  </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+<script src="/js/main.js"></script>
