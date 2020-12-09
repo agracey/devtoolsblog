@@ -8,6 +8,12 @@ Right now, there is a huge amount of tools for a developer looking to work with 
 The goal for this blog is to give a place to learn more about these tools and see demos and reviews from a 3rd party. Each review needs to be similar enough to allow for fair like-to-like comparisons.
 
 
+## How to help
+
+If you have a suggestion of a tool to add, open a ticket with the tool name, it's github repo, and anything you already know about it! If you want to write a review of the tool, open the ticket along with a draft PR then let me know where to send a beer/cookie/other foodie gift :D 
+
+I can help with any editing needed, there's no need to write well. 
+
 
 
 ## TODO:

@@ -4,10 +4,13 @@
     <header> {{ .Title }} </header>
     {{ range .Pages }}
       <div class='card'>
+        {{ if .Page.Draft }}
+        <div class="isDraft"></div>
+        {{ end}}
         <img class='card-img-top' src='https://res.cloudinary.com/eosdesignsystem/image/upload/v1602233106/SUSE/suse-eg.svg' alt='SUSE-logo' />
         <div class='card-body'>
           <h5 class='card-title'>
-            <a href="{{ .Page}}" >
+            <a href="{{ .Page.Permalink}}" > 
               {{ .Page.Title }}
             </a>
           </h5>
