@@ -16,7 +16,7 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, 96px) ;
-  grid-template-rows: 48px repeat(auto-fill, 160px);
+  grid-template-rows: 48px repeat(auto-fill, 128px);
   grid-gap: 8px;
 
   border: 1px solid black;
@@ -29,6 +29,7 @@
   grid-column-start: 1;
   width: 100%;
   background: lightgrey;
+  text-transform: capitalize;
 }
 
 .card {
@@ -36,7 +37,7 @@
 
   border: 1px solid black;
   border-radius: 4px;
-  height: 160px;
+  height: 128px;
 }
 
 
