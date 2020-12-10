@@ -3,9 +3,10 @@ title: "Tsuru"
 date: 2020-12-04T08:43:57-08:00
 draft: true
 
-github: ""
+github: "https://github.com/tsuru/tsuru"
+homepage: "https://tsuru.io/"
 sponsors: []
-tagline_1: ""
+tagline_1: "Open source, extensible and Docker-based Platform as a Service (PaaS)"
 tagline_2: ""
 
 

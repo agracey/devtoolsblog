@@ -3,9 +3,10 @@ title: "OpenShift Odo"
 date: 2020-12-04T08:43:28-08:00
 draft: true
 
-github: ""
+github: "https://github.com/openshift/odo"
+homepage: "https://odo.dev/"
 sponsors: []
-tagline_1: ""
+tagline_1: "Developer-focused CLI for OpenShift and Kubernetes"
 tagline_2: ""
 
 

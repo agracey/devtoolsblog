@@ -7,7 +7,7 @@
         {{ if .Page.Draft }}
         <div class="isDraft"></div>
         {{ end}}
-        <img class='card-img-top' src='https://res.cloudinary.com/eosdesignsystem/image/upload/v1602233106/SUSE/suse-eg.svg' alt='SUSE-logo' />
+        <img class='card-img' src='https://res.cloudinary.com/eosdesignsystem/image/upload/v1602233106/SUSE/suse-eg.svg' alt='SUSE-logo' />
         <div class='card-body'>
           <h5 class='card-title'>
             <a href="{{ .Page.Permalink }}" > 
@@ -17,9 +17,6 @@
           <p class='card-text'>{{ .Page.Params.tagline_1 }}</p>
         </div>
       </div>
-      <!-- <div class="tool-card" data-github="{{ .Page.Params.github }}">
-      {{ .Page.Title }}
-      </div> -->
     {{ end }}
   </section>
   {{ end }}

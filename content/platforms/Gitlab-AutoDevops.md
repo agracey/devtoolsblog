@@ -3,7 +3,7 @@ title: "Gitlab AutoDevops"
 date: 2020-12-04T08:43:15-08:00
 draft: true
 
-github: ""
+homepage: "https://docs.gitlab.com/ee/topics/autodevops/"
 sponsors: []
 tagline_1: ""
 tagline_2: ""

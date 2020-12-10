@@ -3,9 +3,10 @@ title: "Opentelemetry"
 date: 2020-12-07T08:05:22-08:00
 draft: true
 
-github: ""
+github: "https://github.com/open-telemetry"
+homepage: "https://opentelemetry.io"
 sponsors: []
-tagline_1: ""
+tagline_1: "OpenTelemetry makes robust, portable telemetry a built-in feature of cloud-native software."
 tagline_2: ""
 
 

@@ -3,9 +3,10 @@ title: "Atheos"
 date: 2020-12-07T08:00:10-08:00
 draft: true
 
-github: ""
+github: "https://github.com/Atheos/Atheos"
+homepage: "https://www.atheos.io/"
 sponsors: []
-tagline_1: ""
+tagline_1: "A self-hosted browser-based cloud IDE, updated from Codiad IDE"
 tagline_2: ""
 
 

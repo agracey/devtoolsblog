@@ -3,9 +3,10 @@ title: "Jupyter Notebooks"
 date: 2020-12-07T08:00:41-08:00
 draft: true
 
-github: ""
+github: "https://github.com/jupyterlab/jupyterlab"
+homepage: "https://jupyterlab.readthedocs.io/en/latest/"
 sponsors: []
-tagline_1: ""
+tagline_1: "JupyterLab computational environment."
 tagline_2: ""
 
 
