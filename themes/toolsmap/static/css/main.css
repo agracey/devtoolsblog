@@ -35,6 +35,11 @@
   font-family: sans-serif;
 }
 
+.menu-title {
+
+  text-transform: capitalize;
+}
+
 .card {
   align-self: center;
 
@@ -48,7 +53,7 @@
   grid-column-end: 13;
   grid-column-start: 1;
 }
-#cat-Debugging-and-observabilities {
+#cat-Debugging-and-observability {
   grid-column-end: -1;
   grid-column-start: 13;
 }
