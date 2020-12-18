@@ -1,17 +1,17 @@
 <div class="tool-map">
   {{ range .Site.Sections }}
   <section class="tool-category" id="cat-{{ .Title}}">
-    <header> {{ humanize .Title }} </header>
+    <header> {{ .Params.Realtitle }} </header>
     {{ range .Pages }}
       <div class='card'>
         {{ if .Page.Draft }}
         <div class="isDraft"></div>
-        {{ end}}
+        {{ end }}
         <img class='card-img' src='https://res.cloudinary.com/eosdesignsystem/image/upload/v1602233106/SUSE/suse-eg.svg' alt='SUSE-logo' />
         <div class='card-body'>
           <h5 class='card-title'>
             <a href="{{ .Page.Permalink }}" > 
-              {{ humanize .Page.Title }}
+              {{ .Page.Title }}
             </a>
           </h5>
           <p class='card-text'>{{ .Page.Params.tagline_1 }}</p>

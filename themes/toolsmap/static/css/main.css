@@ -4,8 +4,15 @@
 
 .tool-map {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-template-rows: auto;
+  /* grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: auto; */
+
+
+  grid-template-areas: 
+    "pipelines pipelines pipelines pipelines pipelines pipelines debugging debugging debugging debugging misc "
+    "editors   editors   editors   editors   editors   editors   editors   editors   editors   editors   editors "
+    "builds   builds   builds   builds   builds   builds   abstractions   abstractions   abstractions   abstractions   abstractions "
+    "platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms ";
 
   grid-gap: 12px;
 }
@@ -49,32 +56,26 @@
 }
 
 
-#cat-Pipelines {
-  grid-column-end: 13;
-  grid-column-start: 1;
+#cat-pipelines {
+  grid-area: pipelines;
 }
-#cat-Debugging-and-observability {
-  grid-column-end: -1;
-  grid-column-start: 13;
+#cat-debugging-and-observability {
+  grid-area: debugging;
 }
-#cat-Cloud-based-editors {
-  grid-column-end: -12;
-  grid-column-start: 1;
-  /* grid-template-columns: repeat(7, 1fr) ; */
+#cat-cloud-based-editors {
+  grid-area: editors;
 }
-#cat-Container-builds {
-  grid-column-end: -1;
-  grid-column-start: -12;
-  /* grid-template-columns: repeat(4, 1fr) ; */
+#cat-container-builds {
+  grid-area: builds;
 }
-#cat-Abstractions {
-  grid-column-end: 9;
-  grid-column-start: 1;
+#cat-abstractions {
+  grid-area: abstractions;
 }
-#cat-Platforms {
-  grid-column-end: -1;
-  grid-column-start: 9;
-  /* grid-template-columns: repeat(8, 1fr) ; */
+#cat-platforms {
+  grid-area: platforms;
+}
+#cat-Misc {
+  grid-area: misc;
 }
 
 

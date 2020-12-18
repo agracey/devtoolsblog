@@ -17,7 +17,7 @@
                 <li class="menu-collapsed-title">{{ humanize .Title }}</li>
 
                 {{ range .Pages }}
-                  <li><a class="menu-title js-select-current js-feature-flag {{ if false }} selected {{end}}" href="{{ .Page.Permalink }}">{{ humanize .Page.Title }}</a></li>
+                  <li><a class="menu-title js-select-current js-feature-flag {{ if false }} selected {{end}}" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
                 {{ end }}
             </ul>
           </li>
