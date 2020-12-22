@@ -16,6 +16,11 @@
               "kind": "build",
               "isDefault": true
             }
+        },
+        {
+            "label": "publish",
+            "type": "shell",
+            "command": "bash scripts/publish.sh"
         }
     ]
 }

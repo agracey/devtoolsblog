@@ -107,3 +107,12 @@
 .card-text {
   display: none;
 }
+
+
+td, th {
+  border: 1px darkgrey solid;
+  padding: 4px;
+}
+th {
+  text-align: center;
+}
