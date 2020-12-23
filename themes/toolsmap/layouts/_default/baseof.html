@@ -10,7 +10,7 @@
     <section class="content">
         {{- partial "sub-menu.html" . -}}
         <div class="container">
-        {{- .Content -}}
+        {{ block "main" .}}{{end}}
         </div>
     </section>
     <footer class="footer-content js-footer-content">

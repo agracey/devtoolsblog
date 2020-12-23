@@ -10,6 +10,7 @@ tagline_1: "Tekton is a powerful and flexible open-source framework for creating
 tagline_2: ""
 
 type: post
+kind: post
 
 version: v0.19.0
 ---

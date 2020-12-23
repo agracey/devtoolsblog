@@ -1,7 +1,8 @@
 
 {{ define "main" }}
-{{- .Page.Title -}}
-{{- .Content -}}
-
-Hello
+  <h1>{{- .Page.Title -}}</h1>
+  <header class="tool-data"></header>
+  <section class="tool-review">
+    {{- .Content -}}
+  </section>
 {{ end }}
