@@ -61,7 +61,7 @@ There are also a Tekton Triggers and a Dashboard that can be included to add sig
 
 
 
-### What priveleges are needed to install / use
+### What privileges are needed to install / use
 
 - Cluster Admin to create CRDs on installation
 - Individual users (and scripts) can be given access to specific namespaces and scripts.
@@ -83,7 +83,7 @@ There are also a Tekton Triggers and a Dashboard that can be included to add sig
 
 - Highly composable
 - Very powerful with good abstractions
-- Good Security due to ability to run stage with K8s Service Accounts least priviledges needed
+- Good Security due to ability to run stage with K8s Service Accounts least privileges needed
 
 
 ## Cons
