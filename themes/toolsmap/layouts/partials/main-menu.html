@@ -8,7 +8,7 @@
         <ul class="menu-togglable no-list-style">
           <li class="menu-item">
             <div class="menu-element">
-                <span class="main-collapsed-title">Dashboard</span>
+                <span class="main-collapsed-title">Tool Map</span>
             </div>
             <a class="menu-title js-select-current-parent js-feature-flag" href="/">
                 <i class="eos-icons">home</i>
@@ -22,7 +22,7 @@
                 <input class="js-dropdown-toggle" id="{{ .Title }}-toggle" type="checkbox" value="checked">
                 <label class="menu-title" for="{{ .Title }}-toggle"><i class="eos-icons">school</i><span class="menu-title-content">{{ humanize .Title }}</span><i class="eos-icons eos-18 float-right menu-expand">keyboard_arrow_down</i></label>
                 <ul class="menu-dropdown-list menu-element">
-                <li class="menu-collapsed-title">{{ .Title }}</li>
+                <li class="menu-collapsed-title">{{ humanize .Title }}</li>
                 {{ range .Pages }}
                   <li><a class="menu-title js-select-current js-feature-flag {{ if false }} selected {{end}}" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
                 {{ end }}
