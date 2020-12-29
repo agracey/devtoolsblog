@@ -21,9 +21,20 @@ I really like the [CNCF landscape](https://landscape.cncf.io) but it's too clutt
 
 {{<tools-map >}}
 
+## Why not just use the published CNCF Landscape?
+
+I went back and forth on this one. I think there's a lot of value in the CNCF landscape but it's overly complex for programmers not already familiar with Kubernetes and it's ecosystem. 
+
+The goal here is to try to pull out the pieces and options that a developer (or team of developers) would need to know in a way that is accessible to 
+
+## Contributing
+
 If you know of a tool that should be here, please let me know in the [SUSE Community](https://community.suse.com) or open up a issue in Github.
 
-## Weekly Plan
+Also, if there's anything that's not clear in any of these reviews or I'm making any poor assumptions, please let me know! Either in a Github ticket or (preferably) by posting in the [SUSE Community](https://community.suse.com)
+
+
+# Weekly Plan
 
 |Monday|Tuesday|Wednesday|Thursday|Friday|
 |------|-------|---------|--------|------|

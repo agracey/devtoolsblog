@@ -8,7 +8,10 @@
             <li class="menu-item">
           <div class="menu-element"><span class="main-collapsed-title">Tool Map</span></div><a class="menu-title js-select-current-parent js-feature-flag" href="/"><i class="eos-icons">home</i><span class="menu-title-content">Tool Map</span></a>
           
+          
           {{ range .Site.Sections }}
+          {{ if not .Params.Realtitle}}
+          {{ range .Sections }}
   
           <li class="menu-item menu-dropdown">
             <input class="js-dropdown-toggle" id="documentation-toggle" type="checkbox">
@@ -21,6 +24,8 @@
                 {{ end }}
             </ul>
           </li>
+          {{end}}
+          {{end}}
           {{end}}
         </ul>
       </div>

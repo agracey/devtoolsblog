@@ -17,6 +17,8 @@
           </li>
 
           {{ range .Site.Sections }}
+          {{ if not .Params.Realtitle}}
+          {{ range .Sections }}
           <hr />
             <li class="menu-item menu-dropdown">
                 <input class="js-dropdown-toggle" id="{{ .Title }}-toggle" type="checkbox" value="checked">
@@ -28,6 +30,8 @@
                 {{ end }}
                 </ul>
             </li>
+          {{ end }}
+          {{ end }}
           {{ end }}
         </ul>
       </div>

@@ -1,5 +1,7 @@
 <div class="tool-map">
   {{ range .Site.Sections }}
+  {{ if not .Params.Realtitle}}
+  {{ range .Sections }}
   <section class="tool-category" id="cat-{{ .Title}}">
     <header> {{ .Params.Realtitle }} </header>
     {{ range .Pages }}
@@ -19,5 +21,7 @@
       </div>
     {{ end }}
   </section>
+  {{ end }}
+  {{ end }}
   {{ end }}
 </div>
