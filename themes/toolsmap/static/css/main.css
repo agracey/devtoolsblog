@@ -124,3 +124,13 @@ th {
   font-size: xx-large;
   padding: 32px;
 }
+
+
+
+dl.tool-data {
+  position: absolute;
+  right: 0px;
+  width: 256px;
+  color: #0C322C;
+  background-color: #30ba78;
+}

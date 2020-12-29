@@ -1,7 +1,22 @@
 
 {{ define "main" }}
   <h1 class="tool-title">{{- .Page.Title -}}</h1>
-  <header class="tool-data"></header>
+  <dl class="tool-data pull-right">
+    <dt>Written</dt><dd>{{ .Page.Date.Format "Jan 2, 2006" }}</dd>
+    <dt>Homepage</dt><dd><a href="{{ .Page.Params.Homepage }}">{{ .Page.Params.Homepage }}</a></dd>
+    <dt>Github</dt><dd><a href="{{ .Page.Params.Github }}">{{ .Page.Params.Github }}</a></dd>
+    <dt>Version Tested</dt><dd>{{ .Page.Params.Version }}</dd>
+    <dt>Sponsors</dt><dd>
+      <ul>
+        {{ range .Page.Params.Sponsors }}
+        <li>{{- . -}}</li>
+        {{end}}
+      </ul>
+    </dd>
+  </dl>
+  <section class="tool-tagline">
+    {{- .Page.Params.Tagline_1 -}}
+  </section>
   <section class="tool-review">
     {{- .Content -}}
   </section>
