@@ -45,8 +45,19 @@ Recordings:
 - - Last weeks voting
 - - Position in map
 - - Pull up tool's webpage and talk through marketing
-- - Follow instructions to install
-- - Work through basic sample
+- - - Why did it get created? What problem is it trying to solve?
+- - - What type of developer (or team) is it targeting? What does their day-to-day look like?
+- - - How many people seem to be using it? Is there a user community?
+- - - How many people seem to be contributing to it?
+- - - Does anyone offer support?
+- - - Does it rely on any other tech?
+- - - Does it explain any (non-obvious) dependencies?
+- - - Any caveats to note?
+- - Installation steps
+- - - Base resource utilization?
+- - - Videos or asciicinema?
+- - Work through basic example(s)
+- - - Do the examples make sense without installation and running them? 
 - - Review first impression and discuss potential test projects
 - - 
 
