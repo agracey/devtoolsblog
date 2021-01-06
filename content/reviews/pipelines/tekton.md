@@ -74,20 +74,50 @@ For this installation, I'm using a single node (k3s)[k3s.io] cluster on an Intel
 
 #### Base
 
-The base installation is two steps.
-
-Installation of the Custom Resources that are needed:
+The base installation is just applying the provided yaml file.
 
 ```bash
-kubectl apply -f 
+kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
 ```
 
-Then the installation of the operator to work on the Custom Resources:
+This will install the CRDs, the roles and rolebindings, and the deployments to operate on the CRDs. 
+
+
+
+To install the command line tools, I can use the provided rpm to install with zypper.
+
 ```bash
-kubectl apply -f
+sudo zypper in https://github.com/tektoncd/cli/releases/download/v0.15.0/tektoncd-cli-0.15.0_Linux-64bit.rpm
 ```
 
 #### Dashboard
+
+The dashboard is similarly easy and can be installed with this set of yaml:
+
+```bash
+kubectl apply -f https://github.com/tektoncd/dashboard/releases/latest/download/tekton-dashboard-release.yaml
+```
+
+To actually access the dahboard, I needed to do a portforward or create an Ingress object:
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: tekton-dashboard
+  namespace: tekton-pipelines
+spec:
+  rules:
+  - host: tekton.192.168.1.10.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: tekton-dashboard
+          servicePort: 9097
+        pathType: ImplementationSpecific
+```
+
+Now browsing to `tekton.192.168.1.10.xip.io` pulled up the dashboard!
 
 #### Triggers
 
