@@ -17,8 +17,6 @@ Every week (or every other sometimes), I will pick a tool from the map below to 
 
 # Tools Map
 
-I really like the [CNCF landscape](https://landscape.cncf.io) but it's too cluttered with infrastructure tools that a developer shouldn't need to know (or care) about. 
-
 {{<tools-map >}}
 
 ## Why not just use the published CNCF Landscape?

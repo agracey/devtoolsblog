@@ -19,10 +19,12 @@ Tekton is a Kubernetes Native CI/CD runner. It uses Custom Resource Definitions 
 It allows for creating pipelines of tasks that are decoupled from the task definition itself. This allows for a powerful way to break apart the build process into composable bits. 
 
 # Experience
-
+ 
 Note: I've actually used Tekton a few times before and it's my preferred script runner as I'm the most comfortable with it and I have a personal library of tasks. 
 
-I've been using Kubernetes for a while now so I personally liked the tight integration with the platform and working with CRDs (and YAML) was not a new concept. Depending on your background (and how you think about CI/CD), you might count that as a Pro or Con. 
+I've been using Kubernetes for a while now so I personally liked the tight integration with the platform and working with CRDs (and YAML) was not a new concept. Depending on your background (and how you think about CI/CD), you might count that as a Pro or Con. Also, prior to this review, I had not used the CLI. I typically disagree with each tool offering it's own CLI.
+
+
 
 
 
@@ -53,9 +55,8 @@ Custom Resource Definitions give a way to store data in the Kubernetes API in a 
 
 ## Installation
 
-The installation is relatively straightforward and included applying a chunk of pre-rendered YAML found at: https://tekton.dev/docs/getting-started/
+The installation is relatively straightforward if you have access to a kubernetes cluster and includes applying a few chunks of pre-rendered YAML found at: https://tekton.dev/docs/getting-started/
 
-You do need a user with the cluster-admin role to install the CRDs that allow the operator to work.
 
 There are also a Tekton Triggers and a Dashboard that can be included to add significant flexibility.
 
@@ -69,7 +70,22 @@ There are also a Tekton Triggers and a Dashboard that can be included to add sig
 
 ### Steps
 
+For this installation, I'm using a single node (k3s)[k3s.io] cluster on an Intel NUC.  
+
 #### Base
+
+The base installation is two steps.
+
+Installation of the Custom Resources that are needed:
+
+```bash
+kubectl apply -f 
+```
+
+Then the installation of the operator to work on the Custom Resources:
+```bash
+kubectl apply -f
+```
 
 #### Dashboard
 

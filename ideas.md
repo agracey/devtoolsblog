@@ -42,8 +42,14 @@ Weekly Cadence:
 
 Recordings:
 - First Look:
+- - Introduction
+- - - Goals
+- - - Who are we
+
 - - Last weeks voting
-- - Position in map
+- - introduce tool
+- - - Position in map
+
 - - Pull up tool's webpage and talk through marketing
 - - - Why did it get created? What problem is it trying to solve?
 - - - What type of developer (or team) is it targeting? What does their day-to-day look like?

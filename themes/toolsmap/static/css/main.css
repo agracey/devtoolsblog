@@ -9,12 +9,14 @@
 
 
   grid-template-areas: 
-    "pipelines pipelines pipelines pipelines pipelines pipelines debugging debugging debugging debugging misc "
+    "pipelines pipelines pipelines pipelines pipelines debugging debugging debugging debugging debugging misc "
     "editors   editors   editors   editors   editors   editors   editors   editors   editors   editors   editors "
     "builds   builds   builds   builds   builds   builds   abstractions   abstractions   abstractions   abstractions   abstractions "
     "platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms ";
 
   grid-gap: 12px;
+  padding-left: 64px;
+  padding-right: 64px;
 }
 
 
@@ -26,7 +28,7 @@
   grid-template-rows: 1.5em repeat(auto-fill, 128px);
   grid-gap: 8px;
 
-  border: 1px solid black;
+  border: 1px solid rgba(32,32,32,.4);
   border-radius: 8px;
   padding: 12px;
 }
