@@ -2,17 +2,25 @@
 {{ define "main" }}
   <h1 class="tool-title">{{- .Page.Title -}}</h1>
   <dl class="tool-data pull-right">
-    <dt>Written</dt><dd>{{ .Page.Date.Format "Jan 2, 2006" }}</dd>
-    <dt>Homepage</dt><dd><a href="{{ .Page.Params.Homepage }}">{{ .Page.Params.Homepage }}</a></dd>
-    <dt>Github</dt><dd><a href="{{ .Page.Params.Github }}">{{ .Page.Params.Github }}</a></dd>
-    <dt>Version Tested</dt><dd>{{ .Page.Params.Version }}</dd>
-    <dt>Sponsors</dt><dd>
-      <ul>
-        {{ range .Page.Params.Sponsors }}
-        <li>{{- . -}}</li>
-        {{end}}
-      </ul>
-    </dd>
+    <div class='card'>
+      <div class='card-body'>
+
+        <h5 class='card-title'>Details</h5>
+        <h6 class='card-subtitle mb-2'>Written</h6><p class='card-text'>{{ .Page.Date.Format "Jan 2, 2006" }}</p>
+        <h6 class='card-subtitle mb-2'>Homepage</h6><p class='card-text'><a href="{{ .Page.Params.Homepage }}">{{ .Page.Params.Homepage }}</a></p>
+        <h6 class='card-subtitle mb-2'>Github</h6><p class='card-text'><a href="{{ .Page.Params.Github }}">{{ .Page.Params.Github }}</a></p>
+        <h6 class='card-subtitle mb-2'>Version Tested</h6><p class='card-text'>{{ .Page.Params.Version }}</p>
+        <h6 class='card-subtitle mb-2'>Sponsors</h6><p class='card-text'>
+          <ul>
+            {{ range .Page.Params.Sponsors }}
+            <li>{{- . -}}</li>
+            {{end}}
+          </ul>
+        </p>
+      </div>
+    </div>
+
+
   </dl>
   <section class="tool-tagline">
     {{- .Page.Params.Tagline_1 -}}

@@ -8,6 +8,7 @@ hugo -D
 
 pushd public
 
+git add .
 git commit -am "publishing"
 git push
 

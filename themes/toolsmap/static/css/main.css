@@ -90,10 +90,6 @@
   padding: .75rem
 }
 
-.card-img {
-  /* width: 33%; */
-}
-
 .card >.isDraft {
   width: 100%;
   height: 100%;
@@ -110,6 +106,17 @@
   display: none;
 }
 
+.tool-data .card-text {
+  display: block;
+}
+
+.tool-data .card {
+  height: min-content;
+}
+
+.container > section {
+  padding-right: 256px;
+}
 
 td, th {
   border: 1px darkgrey solid;
@@ -124,12 +131,13 @@ th {
 .tool-title {
   font-weight: 800;
   font-size: xx-large;
-  padding: 32px;
+  padding-bottom: 32px;
+  padding-top: 32px;
 }
 
 
 
-dl.tool-data {
+.tool-data {
   position: absolute;
   right: 0px;
   width: 256px;
