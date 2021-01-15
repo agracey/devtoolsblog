@@ -5,6 +5,8 @@ draft: true
 
 github: "https://github.com/codespaces-io/codespaces"
 homepage: "https://codespaces-io.github.io/codespaces/"
+icon: "codespaces.png"
+
 tagline_1: "Devops Workspaces in a Box"
 tagline_2: ""
 

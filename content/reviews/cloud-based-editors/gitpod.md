@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/gitpod-io/gitpod"
 homepage: "https://www.gitpod.io"
+icon: gitpod.png
 sponsors: []
 tagline_1: "Gitpod automates the provisioning of ready-to-code development environments."
 tagline_2: ""

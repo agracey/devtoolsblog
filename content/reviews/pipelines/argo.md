@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/argoproj/argo"
 homepage: "https://argoproj.github.io/argo/"
+icon: "argo.png"
 sponsors: []
 tagline_1: "Argo Workflows: Get stuff done with Kubernetes."
 tagline_2: ""

@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/jupyterlab/jupyterlab"
 homepage: "https://jupyterlab.readthedocs.io/en/latest/"
+icon: jupyter.png
 sponsors: []
 tagline_1: "JupyterLab computational environment."
 tagline_2: ""

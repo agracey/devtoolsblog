@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/heroku"
 homepage: "https://heroku.com/"
+icon: heroku.png
 sponsors: []
 tagline_1: ""
 tagline_2: ""

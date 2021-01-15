@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/drone/drone"
 homepage: "https://drone.io"
+icon: "drone.png"
 sponsors: []
 tagline_1: "Drone is a Container-Native, Continuous Delivery Platform"
 tagline_2: ""

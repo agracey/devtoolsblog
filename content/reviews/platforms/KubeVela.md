@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/oam-dev/kubevela"
 homepage: "https://kubevela.io/"
+icon: oam.png
 sponsors: []
 tagline_1: "An Easy-to-use yet Highly Extensible App Platform based on Kubernetes and Open Application Model."
 tagline_2: ""

@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/open-telemetry"
 homepage: "https://opentelemetry.io"
+icon: opentelemetry.png
 sponsors: []
 tagline_1: "OpenTelemetry makes robust, portable telemetry a built-in feature of cloud-native software."
 tagline_2: ""

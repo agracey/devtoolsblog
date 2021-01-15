@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/Rookout/"
 homepage: "https://rookout.com"
+icon: rookout.png
 sponsors: []
 tagline_1: "Debug anything, anywhere, Effortlessly."
 tagline_2: ""

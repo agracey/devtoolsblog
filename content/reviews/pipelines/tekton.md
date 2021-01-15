@@ -5,6 +5,7 @@ draft: false
 
 github: "https://github.com/tektoncd"
 homepage: "https://tekton.dev"
+icon: "tekton.png"
 sponsors: []
 tagline_1: "Tekton is a powerful and flexible open-source framework for creating CI/CD systems, allowing developers to build, test, and deploy across cloud providers and on-premise systems"
 tagline_2: ""
@@ -27,7 +28,7 @@ I've been using Kubernetes for a while now so I personally liked the tight integ
 
 ## Design
 
-Tekton has a "nesting doll" of ideas that are used to build useful pipelines.
+Tekton has a bit of a "nesting doll" of ideas that are used to build useful pipelines.
 
 Tasks are the most basic level of control. A Task object allows for you to write which programs should be run, in what containers, and in what order. It also allows for a Task author to specify inputs and outputs (and defaults) that are needed for the Task to run. 
 
@@ -42,7 +43,9 @@ Like TaskRuns, you can use PipelineRuns to start and stop the appropriately name
 
 There is also a growing set of published Tasks for anyone to use available on their [Github catalog repo](https://github.com/tektoncd/catalog).
 
-Along with these base components, there are also Triggers. These allow you to map external HTTP(s) addresses into PipelineRuns. 
+Along with these base components, there are also Triggers. These allow you to map external HTTP(s) addresses into PipelineRuns for use as webhooks (think triggering a PipelineRun when Github reports a PR merge).
+
+
 
 
 # Review

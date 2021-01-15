@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/cdr/code-server"
 homepage: "https://coder.com"
+icon: "code-server.png"
 sponsors: ["https://coder.com"]
 tagline_1: "VS Code in the browser"
 tagline_2: ""

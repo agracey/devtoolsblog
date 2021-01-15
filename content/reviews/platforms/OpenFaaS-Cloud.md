@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/openfaas/openfaas-cloud"
 homepage: "https://docs.openfaas.com/openfaas-cloud/intro/"
+icon: openfaas.png
 sponsors: []
 tagline_1: "The Multi-user OpenFaaS Platform"
 tagline_2: ""

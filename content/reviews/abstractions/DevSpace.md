@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/devspace-cloud/devspace"
 homepage: "https://devspace.sh"
+icon: "devspace.png"
 sponsors: []
 tagline_1: "DevSpace is an open-source developer tool for Kubernetes that lets you develop and deploy cloud-native software faster."
 tagline_2: ""

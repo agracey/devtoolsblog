@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/crossplane/crossplane"
 homepage: "https://crossplane.io/"
+icon: crossplane.png
 sponsors: []
 tagline_1: "Manage any infrastructure your applications need directly from Kubernetes"
 tagline_2: ""

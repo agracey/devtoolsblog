@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/pixie-labs/pixie"
 homepage: "https://pixielabs.ai"
+icon: pixie.png
 sponsors: []
 tagline_1: "Instant Kubernetes-Native Application Observability"
 tagline_2: ""

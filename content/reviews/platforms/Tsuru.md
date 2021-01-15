@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/tsuru/tsuru"
 homepage: "https://tsuru.io/"
+icon: tsuru.png
 sponsors: []
 tagline_1: "Open source, extensible and Docker-based Platform as a Service (PaaS)"
 tagline_2: ""

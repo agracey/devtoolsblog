@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/helm/helm"
 homepage: "https://helm.sh/"
+icon: "helm.png"
 sponsors: ["CNCF"]
 tagline_1: "The Kubernetes Package Manager"
 tagline_2: ""

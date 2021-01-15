@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/openshift/odo"
 homepage: "https://odo.dev/"
+icon: openshift.png
 sponsors: []
 tagline_1: "Developer-focused CLI for OpenShift and Kubernetes"
 tagline_2: ""

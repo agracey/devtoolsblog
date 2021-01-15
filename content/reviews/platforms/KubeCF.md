@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/cloudfoundry-incubator/kubecf"
 homepage: "https://github.com/cloudfoundry-incubator/kubecf"
+icon: cf.png
 sponsors: []
 tagline_1: "Cloud Foundry on Kubernetes"
 tagline_2: ""

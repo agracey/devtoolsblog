@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/buildpacks"
 homepage: "https://buildpacks.io"
+icon: buildpacks.png
 sponsors: []
 tagline_1: ""
 tagline_2: ""

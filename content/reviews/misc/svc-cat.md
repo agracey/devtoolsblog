@@ -5,12 +5,10 @@ draft: true
 
 github: "https://github.com/kubernetes-sigs/service-catalog"
 homepage: "https://svc-cat.io"
+icon: "cncf.png"
 sponsors: []
 tagline_1: "Consume services in Kubernetes using the Open Service Broker API"
 tagline_2: ""
 
 
 ---
-
-Nino
-

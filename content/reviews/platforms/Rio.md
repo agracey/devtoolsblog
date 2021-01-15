@@ -5,6 +5,7 @@ draft: true
 
 github: "https://github.com/rancher/rio"
 homepage: "https://rio.io/"
+icon: rancher.png
 sponsors: []
 tagline_1: "Application Deployment Engine for Kubernetes"
 tagline_2: ""
