@@ -25,8 +25,12 @@ Note: I've actually used Tekton a few times before and it's my preferred script 
 
 I've been using Kubernetes for a while now so I personally liked the tight integration with the platform and working with CRDs (and YAML) was not a new concept. Depending on your background (and how you think about CI/CD), you might count that as a Pro or Con. Also, prior to this review, I had not used the CLI. I typically disagree with each tool offering it's own CLI.
 
+My experience with Tekton has been very positive with only a few expections. One of my main complaints is that there was a architectural change at somepoint in the not to distant past that broke a lot of 3rd party documentation. This is a problem shared by a lot of earlier stage projects and I hope that as it moves forward, the 
+
 
 ## Design
+
+(TODO: rethink this section?)
 
 Tekton has a bit of a "nesting doll" of ideas that are used to build useful pipelines.
 
@@ -44,8 +48,6 @@ Like TaskRuns, you can use PipelineRuns to start and stop the appropriately name
 There is also a growing set of published Tasks for anyone to use available on their [Github catalog repo](https://github.com/tektoncd/catalog).
 
 Along with these base components, there are also Triggers. These allow you to map external HTTP(s) addresses into PipelineRuns for use as webhooks (think triggering a PipelineRun when Github reports a PR merge).
-
-
 
 
 # Review
@@ -161,7 +163,7 @@ sudo zypper in https://github.com/tektoncd/cli/releases/download/v0.15.0/tektonc
 Oddly enough, the package is called just `cli` which I think could create confusion later.
 
 
-#### Sample
+### Sample
 
 To run the hello world task, we can use the provided sample yaml. It looks like this:
 
@@ -200,15 +202,11 @@ This will print
 [hello] Hello World
 ```
 
-
-
-
-
 ## Pros
 
 - Highly composable
 - Very powerful with good abstractions
-- Good Security due to ability to run stage with K8s Service Accounts least privileges needed
+- Good Security due to ability to run stage with K8s Service Accounts least privileges needed (TODO: reword)
 
 
 ## Cons
@@ -217,9 +215,17 @@ This will print
 - Needs cluster admin access to install and operator
 - Not beginner friendly (Steep learning curve)
 
+## Ideal Projects
+
+Tekton is a great solution for projects (and teams) where it makes sense to keep your pipelines seperate from the code being built. 
+
+My prediction is that it will be a great backbone for teams looking to build custom PaaS-like solutions and give a good separation of concerns between departments. 
+
+(TODO: complete)
 
 # Conclusion
 
 
 While Tekton is my personal choice because it gives a set of abstractions that I like to thing with, it's potentially a poor choice for a newer developer or someone just looking to play around  with CI/CD ideas. 
 
+(TODO: complete)

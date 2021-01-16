@@ -2,6 +2,15 @@
   max-width: 1440px;
 }
 
+h1, h2, h3, h4 {
+  margin-top: 32px;
+  font-weight: bolder;
+}
+
+.heading-link .eos-icons {
+  vertical-align: middle;
+}
+
 .tool-map {
   display: grid;
   /* grid-template-columns: repeat(24, 1fr);

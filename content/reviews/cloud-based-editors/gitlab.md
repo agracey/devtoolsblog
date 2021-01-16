@@ -5,6 +5,7 @@ draft: true
 
 github: ""
 homepage: ""
+icon: gitlab.png
 sponsors: []
 tagline_1: ""
 tagline_2: ""
