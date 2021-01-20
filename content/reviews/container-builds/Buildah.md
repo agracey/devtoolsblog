@@ -9,10 +9,13 @@ icon: containers.png
 sponsors: []
 tagline_1: "A tool that facilitates building OCI images"
 tagline_2: ""
+
+
+version: v1.17.1
 ---
 
 
-Buildah is a tool to build containers without needing docker. It can be 
+Buildah is a tool to build containers without needing docker.
 
 # Experience
 Like a few of the other tools here, I've used Buildah for a few years and use it as my main tool. As usual, I will try to be as unbiased as possible but please let me know if you believe I've missed (or ignored) anything by accident!
