@@ -5,7 +5,7 @@
   <section class="tool-category" id="cat-{{ .Title}}">
     <header> {{ .Params.Realtitle }} </header>
     {{ range .Pages }}
-      <div class='card'>
+      <div class='card'  title='{{.Page.Params.tagline_1}}'>
         {{ if .Page.Draft }}
         <div class="isDraft"></div>
         {{ end }}
