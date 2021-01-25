@@ -1,6 +1,6 @@
 
 {{ define "main" }}
-  <h1 class="tool-title">{{- .Page.Title -}}</h1>
+  <h1 class="tool-title">Review of  {{- .Page.Title -}}</h1>
   <dl class="tool-data pull-right">
     <div class='card'>
       <img class='card-img' src='/icons/{{ .Page.Params.icon }}' alt='SUSE-logo' />
@@ -26,9 +26,22 @@
       </p>
     </div>
   </dl>
-  <section class="tool-tagline">
-    {{- .Page.Params.Tagline_1 -}}
+
+
+  <section class="welcome">
+    <p>This is part of a series of <a href="/">cloud native developer tool reviews</a> in which I look at many of the popular or interesting tools for developers building software in a Cloud Native world. </p>
+    <p> As many developers have experienced, this new way of developing software can lead to an explosion of process complexity. Using the right tools for the job can help mitigate this significantly. 
+      I'm hoping that with these reviews, you can find the toolset that works best for you and the amazing things you are building!</p>
   </section>
+  <section class="section-review">
+    {{- .Parent.Content -}}
+  </section>
+
+
+  <!-- <section class="tool-tagline">
+    {{- .Page.Params.Tagline_1 -}}
+  </section> -->
+
   <section class="tool-review">
     {{- .Content -}}
   </section>

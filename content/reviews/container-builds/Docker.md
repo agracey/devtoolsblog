@@ -13,6 +13,8 @@ tagline_2: ""
 logo: ""
 ---
 
+Docker was the first to make creating and managing containers easy enough for mass adoption. The underlying ideas are not new (ad)
+
 # Summary
 
 # Experience

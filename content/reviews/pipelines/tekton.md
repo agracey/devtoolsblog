@@ -15,47 +15,47 @@ version: v0.19.0
 ---
 
 
-Tekton is a Kubernetes Native CI/CD runner. It uses Custom Resource Definitions (CRDs) to store it's configuration and control script running. 
+# Tekton 
+For today's review, I'm going to look into [Tekton](https://tekton.dev). It is a fully [Kubernetes](https://kubernetes.io) Native CI/CD runner. 
 
-It allows for creating pipelines of tasks that are decoupled from the task definition itself. This allows for a powerful way to break apart the build process into composable bits. 
+
+One of it's unique selling points is that it separates the process (Pipeline), the scripts being run (Tasks), the code, and the trigger to actually start the process. This decoupling allows for less duplication across projects as well as a similar decoupling in who is responsible for each part of the process.
+
+This allows for a powerful way to break apart both the build process and the human responsibilities into more flexible pieces.
+
 
 # Experience
  
-Note: I've actually used Tekton a few times before and it's my preferred script runner as I'm the most comfortable with it and I have a personal library of tasks. 
+Note: I've used Tekton a few times before and it's my preferred script runner as I'm the most comfortable with it and I have a personal library of tasks. 
 
 I've been using Kubernetes for a while now so I personally liked the tight integration with the platform and working with CRDs (and YAML) was not a new concept. Depending on your background (and how you think about CI/CD), you might count that as a Pro or Con. Also, prior to this review, I had not used the CLI. I typically disagree with each tool offering it's own CLI.
 
-My experience with Tekton has been very positive with only a few expections. One of my main complaints is that there was a architectural change at somepoint in the not to distant past that broke a lot of 3rd party documentation. This is a problem shared by a lot of earlier stage projects and I hope that as it moves forward, the 
+My experience with Tekton has been very positive with only a few expectations. One of my main complaints is that there was a architectural change at some point in the not to distant past that broke a lot of 3rd party documentation. This is a problem shared by a lot of earlier stage projects and I hope that as it moves forward, the 
 
 
-## Design
 
-(TODO: rethink this section?)
+## How it Works
 
-Tekton has a bit of a "nesting doll" of ideas that are used to build useful pipelines.
+To achieve the flexibility it needs, Tekton has a bit of a "nesting doll" of ideas that are used to put together useful pipelines.
 
-Tasks are the most basic level of control. A Task object allows for you to write which programs should be run, in what containers, and in what order. It also allows for a Task author to specify inputs and outputs (and defaults) that are needed for the Task to run. 
+Tasks are the most basic level of control. A Task object allows for you to write which programs should be run, in which container images, and in what order. It also allows for a Task author to specify inputs and outputs (and defaults) that are needed for the Task to run. 
 
-The steps in a task share a pod meaning that they share a filesystem between each other.
-
-TaskRuns create a Pod with all the required pieces based on the Task being run then collect the output of the containers in the Pod.
-
-One step higher, you can create Pipelines that add the ability to multiple Tasks in parallel as well as share a workspace (either in the form of a PersistentVolume or Minio/S3 bucket). This allows for
-
-Like TaskRuns, you can use PipelineRuns to start and stop the appropriately named Pipeline Runs.
+The steps in a task share a pod (meaning that they share a filesystem and resources)
 
 
-There is also a growing set of published Tasks for anyone to use available on their [Github catalog repo](https://github.com/tektoncd/catalog).
-
-Along with these base components, there are also Triggers. These allow you to map external HTTP(s) addresses into PipelineRuns for use as webhooks (think triggering a PipelineRun when Github reports a PR merge).
+TaskRuns manage the life cycle of a Task to create a Kubernetes Pod with all the required configuration then collect the output of the Pod.
 
 
-# Review
 
-## Why should I care?
+One step higher, Pipelines add the ability to run multiple Tasks in parallel as well as share a workspace (either in the form of a PersistentVolume or Minio/S3 bucket). This allows for defining a shared set of Task definitions then composing them into a fully featured process.
 
-CI/CD systems are increasingly central to the software development process. A good release process should be automated in a safe way to allow for faster development cycles. 
+Like TaskRuns, PipelineRuns manage the life cycle of Pipelines. 
 
+
+Along with these base components, there is also the Trigger component which maps external HTTP(s) addresses into PipelineRuns for use as web-hooks (e.g. triggering a PipelineRun when Github reports a PR merge)
+
+
+# Usage
 
 ## Prior knowledge needed
 
@@ -75,7 +75,7 @@ Custom Resource Definitions give a way to store data in the Kubernetes API in a 
 
 ## Installation
 
-The installation is relatively straightforward if you have access to a kubernetes cluster and includes applying a few chunks of pre-rendered YAML found at: https://tekton.dev/docs/getting-started/
+The installation is relatively straightforward if you have access to a Kubernetes cluster and includes applying a few chunks of pre-rendered YAML found at: https://tekton.dev/docs/getting-started/
 
 
 There are also a Tekton Triggers and a Dashboard that can be included to add significant flexibility.
@@ -100,7 +100,7 @@ The base installation is just applying the provided yaml file.
 kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
 ```
 
-This will install the CRDs, the roles and rolebindings, and the deployments to operate on the CRDs. 
+This will install the CRDs, the roles and role bindings, and the deployments to operate on the CRDs. 
 
 
 
@@ -118,7 +118,7 @@ The dashboard is similarly easy and can be installed with this provided set of y
 kubectl apply -f https://github.com/tektoncd/dashboard/releases/latest/download/tekton-dashboard-release.yaml
 ```
 
-To actually access the dahboard, I needed to do a portforward or create an Ingress object:
+To actually access the dashboard, I needed to do a portforward or create an Ingress object:
 
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
@@ -143,7 +143,7 @@ Now browsing to `tekton.192.168.1.10.xip.io` pulled up the dashboard!
 
 Lastly, we can setup the triggers so we can use webhooks or other external action to start pipeline runs.
 
-As with the other components, we can install with it's own yaml file.
+As with the other components, we can install with its own yaml file.
 
 ```bash
 kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
@@ -207,7 +207,7 @@ This will print
 - Highly composable
 - Very powerful with good abstractions
 - Good Security due to ability to run stage with K8s Service Accounts least privileges needed (TODO: reword)
-
+- Growing set of published Tasks for anyone to use available on their [Github catalog repo](https://github.com/tektoncd/catalog).
 
 ## Cons
 
@@ -217,7 +217,7 @@ This will print
 
 ## Ideal Projects
 
-Tekton is a great solution for projects (and teams) where it makes sense to keep your pipelines seperate from the code being built. 
+Tekton is a great solution for projects (and teams) where it makes sense to keep your pipelines separate from the code being built. 
 
 My prediction is that it will be a great backbone for teams looking to build custom PaaS-like solutions and give a good separation of concerns between departments. 
 

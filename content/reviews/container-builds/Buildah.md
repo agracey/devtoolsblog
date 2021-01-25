@@ -5,7 +5,7 @@ draft: false
 
 github: "https://github.com/containers/buildah"
 homepage: "https://buildah.io"
-icon: containers.png
+icon: buildah.png
 sponsors: []
 tagline_1: "A tool that facilitates building OCI images"
 tagline_2: ""
