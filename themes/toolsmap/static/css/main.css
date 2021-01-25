@@ -138,10 +138,19 @@ th {
 
 
 .tool-title {
-  font-weight: 800;
-  font-size: xx-large;
   padding-bottom: 32px;
   padding-top: 32px;
+}
+
+.tool-title h1 {
+  font-weight: 800;
+  font-size: xx-large;
+}
+
+.tool-title .author{
+  font-weight: 100;
+  font-size: small;
+  font-style: italic;
 }
 
 
@@ -152,4 +161,14 @@ th {
   width: 256px;
   color: #0C322C;
   background-color: #30ba78;
+  top: 32px;
+}
+
+.tool-data li {
+  padding: 0px;
+}
+
+.tool-data ul {
+  padding-inline-start: 16px;
+  list-style-type: none;
 }

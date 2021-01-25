@@ -6,3 +6,6 @@ draft: true
 realtitle: "Platforms"
 
 ---
+
+# Why do I need a platform?
+

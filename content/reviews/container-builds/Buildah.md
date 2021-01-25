@@ -10,6 +10,8 @@ sponsors: []
 tagline_1: "A tool that facilitates building OCI images"
 tagline_2: ""
 
+author: "Andrew Gracey"
+author_bio: "Developer Advocate at SUSE, focusing on making Cloud Native development less painful"
 
 version: v1.17.1
 ---

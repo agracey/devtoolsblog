@@ -24,3 +24,6 @@ These ideas together give an amazingly agile way of building complex software. S
 This all comes at a cost though... It's obviously not possible to manually test, build, and deploy ever single version of the code so we need to automate the process. Due to this, an entire industry has been created around this problem and each solution approaches it in a different way.
 
 As these processes are central to building your software, it's important to pick a solution that works the way you need it to. I've selected a few of the most popular (or novel) choices in the industry currently in the hopes of making the selection process less tedious. 
+
+For some discussion on requirements and best practices check out [this article from Atlassian.](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
+

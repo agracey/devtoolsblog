@@ -11,11 +11,15 @@ tagline_1: "Tekton is a powerful and flexible open-source framework for creating
 tagline_2: ""
 
 
+author: "Andrew Gracey"
+author_bio: "Developer Advocate at SUSE, focusing on making Cloud Native development less painful"
+
 version: v0.19.0
 ---
 
 
 # Tekton 
+
 For today's review, I'm going to look into [Tekton](https://tekton.dev). It is a fully [Kubernetes](https://kubernetes.io) Native CI/CD runner. 
 
 
@@ -206,7 +210,7 @@ This will print
 
 - Highly composable
 - Very powerful with good abstractions
-- Good Security due to ability to run stage with K8s Service Accounts least privileges needed (TODO: reword)
+- Solid Security due to ability to use Pipeline specific Service Accounts
 - Growing set of published Tasks for anyone to use available on their [Github catalog repo](https://github.com/tektoncd/catalog).
 
 ## Cons
@@ -217,15 +221,15 @@ This will print
 
 ## Ideal Projects
 
-Tekton is a great solution for projects (and teams) where it makes sense to keep your pipelines separate from the code being built. 
+Tekton is a great solution for projects (and teams) where it makes sense to keep your pipelines separate from the code being built. This can be a useful pattern if you have several components that have the same or similar build processes because you can evolve governance in a more ,centralized way.
 
-My prediction is that it will be a great backbone for teams looking to build custom PaaS-like solutions and give a good separation of concerns between departments. 
 
-(TODO: complete)
+My prediction is that it will be used by a lot of companies' backbone for release teams looking to build custom PaaS-like solutions and give a good separation of concerns between departments. 
+
+
+While Tekton is my personal choice because it gives a set of abstractions that I like to think with, it's potentially a poor choice for teams with relatively few components or who don't want (or need) to jump on the Kubernetes bandwagon.
 
 # Conclusion
 
 
-While Tekton is my personal choice because it gives a set of abstractions that I like to thing with, it's potentially a poor choice for a newer developer or someone just looking to play around  with CI/CD ideas. 
-
-(TODO: complete)
+Tekton is a fantastic project with a bright future. Teams who are bought in to Kubernetes would likely enjoy using Tekton and find it easy to manage.

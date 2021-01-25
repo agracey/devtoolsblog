@@ -1,37 +1,19 @@
 
 {{ define "main" }}
-  <h1 class="tool-title">Review of  {{- .Page.Title -}}</h1>
-  <dl class="tool-data pull-right">
-    <div class='card'>
-      <img class='card-img' src='/icons/{{ .Page.Params.icon }}' alt='SUSE-logo' />
-      <div class='card-body'>
-        <h6 class='card-subtitle mb-2'>Homepage</h6><p class='card-text'><a href="{{ .Page.Params.Homepage }}">{{ .Page.Params.Homepage }}</a></p>
-        <h6 class='card-subtitle mb-2'>Github</h6><p class='card-text'><a href="{{ .Page.Params.Github }}">{{ .Page.Params.Github }}</a></p>
-        <h6 class='card-subtitle mb-2'>Written</h6><p class='card-text'>{{ .Page.Date.Format "Jan 2, 2006" }}</p>
-        <h6 class='card-subtitle mb-2'>Version Tested</h6><p class='card-text'>{{ .Page.Params.Version }}</p>
-        {{ if .Page.Params.Sponsors }}
-        <h6 class='card-subtitle mb-2'>Sponsors</h6>
-        <p class='card-text'>
-          <ul>
-            {{ range .Page.Params.Sponsors }}
-            <li>{{- . -}}</li>
-            {{end}}
-          </ul>
-        </p>
-        {{ end }}
-      </div>
-      <h5 class='card-title'>Contents</h5>
-      <p class='card-text'>
-        {{ .TableOfContents }}
-      </p>
-    </div>
-  </dl>
+  <section class="tool-title">
+    <h1>Review of <span>{{- .Page.Title -}}</span></h1>
+    <div class="author">Written {{ .Page.Date.Format "Jan 2, 2006" }} by {{ .Page.Params.Author}} -- {{ .Page.Params.Author_bio}}</div>
+  </section>
+
+  {{- partial "sidebar.html" . -}}
+
 
 
   <section class="welcome">
     <p>This is part of a series of <a href="/">cloud native developer tool reviews</a> in which I look at many of the popular or interesting tools for developers building software in a Cloud Native world. </p>
     <p> As many developers have experienced, this new way of developing software can lead to an explosion of process complexity. Using the right tools for the job can help mitigate this significantly. 
       I'm hoping that with these reviews, you can find the toolset that works best for you and the amazing things you are building!</p>
+
   </section>
   <section class="section-review">
     {{- .Parent.Content -}}

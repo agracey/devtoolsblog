@@ -1,0 +1,25 @@
+<dl class="tool-data pull-right">
+    <div class='card'>
+      <img class='card-img' src='/icons/{{ .Page.Params.icon }}' alt='SUSE-logo' />
+      <div class='card-body'>
+        <h6 class='card-subtitle mb-2'>Homepage</h6><p class='card-text'><a href="{{ .Page.Params.Homepage }}">{{ .Page.Params.Homepage }}</a></p>
+        <h6 class='card-subtitle mb-2'>Github</h6><p class='card-text'><a href="{{ .Page.Params.Github }}">{{ .Page.Params.Github }}</a></p>
+
+        <h6 class='card-subtitle mb-2'>Version Tested</h6><p class='card-text'>{{ .Page.Params.Version }}</p>
+        {{ if .Page.Params.Sponsors }}
+        <h6 class='card-subtitle mb-2'>Sponsors</h6>
+        <p class='card-text'>
+          <ul>
+            {{ range .Page.Params.Sponsors }}
+            <li>{{- . -}}</li>
+            {{end}}
+          </ul>
+        </p>
+        {{ end }}
+      </div>
+      <h5 class='card-title'>Contents</h5>
+      <p class='card-text'>
+        {{ .TableOfContents }}
+      </p>
+    </div>
+  </dl>
