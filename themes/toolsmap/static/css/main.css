@@ -164,6 +164,11 @@ th {
   top: 32px;
 }
 
+
+li {
+  padding: 4px 0px 0px;
+}
+
 .tool-data li {
   padding: 0px;
 }
@@ -171,4 +176,43 @@ th {
 .tool-data ul {
   padding-inline-start: 16px;
   list-style-type: none;
+}
+
+code[data-lang]:before {
+  content: attr(data-lang);
+  clear: right;
+  display: block;
+  width: fit-content;
+  background: grey;
+  padding: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -24px;
+  margin-bottom: 8px;
+}
+
+pre {
+  padding-left: 24px;
+  padding-bottom: 8px;
+}
+
+.callout {
+  background: #E0F7F0;
+  padding: 8px;
+  margin-bottom:8px;
+}
+
+.callout[data-title]:not([data-title='']):before {
+  content: attr(data-title);
+  clear: right;
+  display: block;
+  font-weight: bold;
+  width: fit-content;
+  background: #4DD3A7;
+  padding: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  margin-bottom: 8px;
 }

@@ -10,6 +10,7 @@ realtitle: "Container Builds"
 
 # Why should I care about Container Builds?
 
-With the rise in popularity of containers and Kubernetes, the way applications are packaged and managed has become increasingly important. 
+While Docker was the first to market to make working with containers easy, it made some design choices that might not work for some usecases. Since their inception, there has been a large amount of projects taking their ideas and improving on them in different ways. 
+
 
 (TODO: complete)

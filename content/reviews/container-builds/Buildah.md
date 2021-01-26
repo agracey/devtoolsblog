@@ -31,16 +31,12 @@ Buildah is part of the set of Open Source container tools that also contains CRI
 
 There is some overlap between each tool in this set and it can be a little confusing as (for example) Podman is a complete drop-in replacement for docker on the command line so it can also build and manage container images.
 
-Where Buildah stands out is 
+Where Buildah stands out is in it's 
 
 (TODO: complete)
 
 
 # Review
-
-## Why should I care?
-
-While Docker was the first to market to make working with containers easy, it made some design choices that might not work for some usecases. Since their inception, there has been a large amount of projects taking their ideas and improving on them in different ways. 
 
 ## Prior knowledge needed
 
@@ -54,7 +50,7 @@ Buildah is purely a command line tool for Linux and can be installed from both .
 
 ### What privileges are needed to install / use
 
-- Root on a Linux host
+- Root on a Linux host to install
 
 ### Steps
 
