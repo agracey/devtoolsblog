@@ -169,42 +169,132 @@ Oddly enough, the package is called just `cli` which I think could create confus
 
 ### Sample
 
-To run the hello world task, we can use the provided sample yaml. It looks like this:
+To show how Tekton uses Yaml to define tasks and pipelines, I built a pretty simple and self-contained example. In it, we wait for a set amount of time then print a string. Both the string and delay are configurable and are split between two tasks.
+
+To start, create a Task called `sleep` containing:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: hello
+  name: sleep
 spec:
+  params:
+    - name: time-to-sleep
+      type: string
+      default: "30"
+      description: How long to wait
   steps:
-    - name: hello
-      image: ubuntu
+    - name: sleep
+      image: registry.opensuse.org/opensuse/leap:15.2
+      command:
+        - sleep
+      args: 
+        - $(params.time-to-sleep)
+    - name: print-done
+      image: registry.opensuse.org/opensuse/leap:15.2
       command:
         - echo
       args: 
-        - "Hello World"
+        - "Done Sleeping!"
 ```
 
-Save this to a file and use `kubectl apply -f <file.yaml>` to create.
+It will sleep for the time requested (through the params object) then prints "Done Sleeping!" to the logs.
 
-When that is done, we will see the task in the dashboard as well as with `tkn task list` and can start the task with:
+Next create a Task called `print`:
+
+```yaml
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: print-text
+spec:
+  params:
+    - name: text-to-echo
+      type: string
+      default: "This is very contrived"
+      description: Text To Echo Out
+  steps:
+    - name: hello
+      image: registry.opensuse.org/opensuse/leap:15.2
+      command:
+        - echo
+      args: 
+        - $(params.text-to-echo)
+```
+
+Similarly, this prints the requested Text!
+
+These can be run independently with `tkn task start sleep` or `tkn task start print` but that misses out on much of the flexibility of Pipelines.
+
+To combine these Tasks create a Pipeline with both of them specified:
+
+```yaml
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: mock-pipeline
+spec:
+  params:
+    - name: time-to-sleep
+      type: string
+      default: "30"
+      description: How long to wait
+  tasks:
+    - name: pull-code
+      taskRef:
+        name: print-text
+      params:
+        - name: text-to-echo
+          value: "Maybe pulling some code from git?"
+    - name: build
+      runAfter: 
+      - pull-code
+      taskRef:
+        name: sleep
+      params:
+        - name: time-to-sleep
+          value: $(params.time-to-sleep)
+    - name: print2
+      runAfter: 
+      - build
+      taskRef:
+        name: print-text
+      params:
+        - name: text-to-echo
+          value: "This could be a deploy?"
+```
+
+
+This Pipeline runs the `print-text` task to print "Maybe pulling some code from git?", then sleeps for a request amount of time, then runs `print-text` again to print "This could be a deploy?" 
+
+To run this pipeline, use:
 
 ```bash
-tkn task start hello
+tkn pipeline start mock-pipeline
 ```
 
-At the end of the output, you will see a recommended next step to get the output that looks like:
+It will prompt for how long to wait then print a command to use for viewing logs that looks similar to:
 
 ```bash
-tkn taskrun logs hello-run-<id> -f -n default
+tkn pipelinerun logs mock-pipeline-run-zv6vs -f -n default
 ```
 
-This will print 
+If you run this you will see all (or part if it's still sleeping) of this output:
 
 ```log
-[hello] Hello World
+[pull-code : hello] Maybe pulling some code from git?
+
+
+[build : print-done] Done Sleeping!
+
+[print2 : hello] This could be a deploy
 ```
+
+
+While these tasks are overly simple, there are a lot of pre-built tasks in [the provided catalog](https://github.com/tektoncd/catalog/tree/master/task) that can be used to easily create powerful pipelines. And since they are all yaml, it's simple to modify them as needed!
+
+
 
 ## Pros
 
@@ -232,4 +322,6 @@ While Tekton is my personal choice because it gives a set of abstractions that I
 # Conclusion
 
 
-Tekton is a fantastic project with a bright future. Teams who are bought in to Kubernetes would likely enjoy using Tekton and find it easy to manage.
+Tekton is a fantastic project with a lot of cool ideas on minimalism. Teams who are already bought in to Kubernetes would likely enjoy using Tekton and find it easy to manage.
+
+I'm very excited to see where this project goes in the future!
