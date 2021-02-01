@@ -282,7 +282,7 @@ tkn pipelinerun logs mock-pipeline-run-zv6vs -f -n default
 
 If you run this you will see all (or part if it's still sleeping) of this output:
 
-```log
+```bash
 [pull-code : hello] Maybe pulling some code from git?
 
 
@@ -294,7 +294,7 @@ If you run this you will see all (or part if it's still sleeping) of this output
 
 While these tasks are overly simple, there are a lot of pre-built tasks in [the provided catalog](https://github.com/tektoncd/catalog/tree/master/task) that can be used to easily create powerful pipelines. And since they are all yaml, it's simple to modify them as needed!
 
-
+In future blogs, I'll go through using either Kaniko or Cloud Native Buildpacks to build images. Tekton has good support for both of these methods.
 
 ## Pros
 
