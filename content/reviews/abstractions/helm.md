@@ -350,14 +350,13 @@ I can then browse to wordpress-demo.192.168.1.12.omg.howdoi.website and get the 
 
 - Industry standard
 - Good security model 
-- 
+- Can publish packages to public registry easily (Github Pages [make this free](https://medium.com/@mattiaperi/create-a-public-helm-chart-repository-with-github-pages-49b180dbb417))
 
 ## Cons
 
 - Charts can become very complex
 - Installation, Upgrades and Rollbacks are only single step (as opposed to the Operator Model which allows for a more scripted approach)
 
-(TODO: complete)
 
 ## Ideal Projects
 
@@ -368,6 +367,4 @@ It's likely not worth creating a helm chart just for a Wordpress site, but it's 
 
 # Conclusion
 
-Helm 
-
-(TODO: complete)
+Helm is still the go to choice for most any team looking to distribute their application in an easy to consume way. If you are building an app that is more than one or two components or configuration options, you will likely want to package them into a chart. 
