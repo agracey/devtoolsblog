@@ -1,6 +1,6 @@
 <aside class="main-menu js-main-menu">
     <div class="mm-navigation-container">
-      <header><a class="hide-collapsed" href="https://www.eosdesignsystem.com/"><img src="images/suse-product-brand.svg" alt="SUSE product brand logotype"></a>
+      <header><a class="hide-collapsed" href="https://www.eosdesignsystem.com/"><h1 style="color: white; font-size: large; margin-top:10px;">Dev Tools Roundup</h1></a>
         <div class="mm-navigation-close js-sidebar-toggle"><i class="eos-icons js-sidebar-tooltip js-tooltip" data-placement="bottom" title="">menu</i></div>
       </header>
 
@@ -22,9 +22,9 @@
           <hr />
             <li class="menu-item menu-dropdown">
                 <input class="js-dropdown-toggle" id="{{ .Title }}-toggle" type="checkbox" value="checked">
-                <label class="menu-title" for="{{ .Title }}-toggle"><i class="eos-icons">school</i><span class="menu-title-content">{{ humanize .Title }}</span><i class="eos-icons eos-18 float-right menu-expand">keyboard_arrow_down</i></label>
+                <label class="menu-title" for="{{ .Title }}-toggle"><i class="eos-icons">{{.Params.Icon}}</i><span class="menu-title-content">{{ .Params.Realtitle }}</span><i class="eos-icons eos-18 float-right menu-expand">keyboard_arrow_down</i></label>
                 <ul class="menu-dropdown-list menu-element">
-                <li class="menu-collapsed-title">{{ humanize .Title }}</li>
+                <li class="menu-collapsed-title">{{ .Params.Realtitle }}</li>
                 {{ range .Pages }}
                   <li><a class="menu-title js-select-current js-feature-flag {{ if false }} selected {{end}}" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
                 {{ end }}

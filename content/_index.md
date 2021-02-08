@@ -12,8 +12,10 @@ In the Cloud Native world, the landscape of what a software engineer needs to kn
 
 In this blog series, I will be reviewing tools geared at helping developers get back to what we do best: write interesting code!
 
-Each week (or every other sometimes), I will pick a tool from the map below to write a review and do a demo of.
+Each week (or every other when needed), I will pick a tool from the map below to write a review and record a demo of something that differentiates it from other options. As I go, I'll edit this page to show the most recent list of blog entries.
 
+
+Note that this is very much a continual work in progress and as I get feedback and learn, I'll try to update all of the entries with new formats. 
 
 # Tools Map
 
@@ -27,6 +29,8 @@ The goal here is to try to pull out the specific pieces and options that a devel
 
 ## Contributing
 
-If you know of a tool that should be here, please let me know in the [SUSE Community](https://community.suse.com) or open up a issue in Github.
+If you know of a tool that should be here, please let me know in the [SUSE Community](https://community.suse.com) (Once it is live!) or open up a issue in Github.
 
-Also, if there's anything that's not clear in any of these reviews or I'm making any poor assumptions, please let me know! Either in a Github ticket or (preferably) by posting in the [SUSE Community](https://community.suse.com)
+Also, if there's anything that's not clear in any of these reviews or I'm making any mistaken assumptions, please let me know! Either in a Github ticket or (preferably) by posting in the [SUSE Community](https://community.suse.com)
+
+

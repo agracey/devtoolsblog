@@ -4,6 +4,7 @@ date: 2020-12-04T08:48:59-08:00
 draft: true
 
 realtitle: "CI/CD Pipelines"
+icon: wifi_protected_setup
 
 ---
 
