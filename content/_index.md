@@ -10,9 +10,9 @@ draft: false
 
 In the Cloud Native world, the landscape of what a software engineer needs to know has exploded in the last few years and has become increasingly complex. We have seen an explosion in tools available for our operator friends but developers have been left behind.
 
-I will be posting reviews of tools geared at helping developers get back to what we do best: write interesting code!
+In this blog series, I will be reviewing tools geared at helping developers get back to what we do best: write interesting code!
 
-Every week (or every other sometimes), I will pick a tool from the map below to review. I will record a "First Look" video of me reading through the github readme to install and run the samples; I will learn a bit about the tool offline then use it with a sample project (on stream); and lastly I will post a review of the tool on this blog. 
+Each week (or every other sometimes), I will pick a tool from the map below to write a review and do a demo of.
 
 
 # Tools Map
@@ -21,19 +21,12 @@ Every week (or every other sometimes), I will pick a tool from the map below to 
 
 ## Why not just use the published CNCF Landscape?
 
-I went back and forth on this one. I think there's a lot of value in the CNCF landscape but it's overly complex for programmers not already familiar with Kubernetes and it's ecosystem. 
+I went back and forth on this if I should or not. I think there's a lot of value in the CNCF landscape but it's too overly complex for programmers when not already familiar with Kubernetes and it's ecosystem. 
 
-The goal here is to try to pull out the pieces and options that a developer (or team of developers) would need to know in a way that is accessible to 
+The goal here is to try to pull out the specific pieces and options that a developer (or team of developers) would need to know in a way that is accessible without the larger infrastructure background.
 
 ## Contributing
 
 If you know of a tool that should be here, please let me know in the [SUSE Community](https://community.suse.com) or open up a issue in Github.
 
 Also, if there's anything that's not clear in any of these reviews or I'm making any poor assumptions, please let me know! Either in a Github ticket or (preferably) by posting in the [SUSE Community](https://community.suse.com)
-
-
-# Weekly Plan
-
-|Monday|Tuesday|Wednesday|Thursday|Friday|
-|------|-------|---------|--------|------|
-|Pick Tool|First Look Video @ 9AM PT|Offline Research| Sample Project @ 9AM PT| Write Review|
