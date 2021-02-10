@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
 
   grid-template-areas: 
     "pipelines pipelines pipelines pipelines pipelines debugging debugging debugging debugging debugging misc "
-    "editors   editors   editors   editors   editors   editors   editors   editors   editors   editors   editors "
+    "editors   editors   editors   editors   editors   editors   editors   editors   editors   editors   misc "
     "builds   builds   builds   builds   builds   builds   abstractions   abstractions   abstractions   abstractions   abstractions "
     "platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms ";
 
@@ -85,7 +85,7 @@ h1, h2, h3, h4 {
 #cat-platforms {
   grid-area: platforms;
 }
-#cat-Misc {
+#cat-misc {
   grid-area: misc;
 }
 

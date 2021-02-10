@@ -6,7 +6,7 @@ draft: false
 
 
 
-# Purpose
+# Purpose of this Series
 
 In the Cloud Native world, the landscape of what a software engineer needs to know has exploded in the last few years and has become increasingly complex. We have seen an explosion in tools available for our operator friends but developers have been left behind.
 
