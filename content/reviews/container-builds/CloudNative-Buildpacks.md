@@ -1,5 +1,5 @@
 ---
-title: "CloudNative Buildpacks"
+title: "Buildpacks"
 date: 2020-12-04T08:49:26-08:00
 draft: true
 

@@ -216,3 +216,42 @@ pre {
   margin-top: -8px;
   margin-bottom: 8px;
 }
+
+@media (max-width : 1024px) {
+
+  .tool-category {
+    grid-template-columns: repeat(auto-fill, 56px) ;
+    grid-template-rows: 1.5em repeat(auto-fill, 92px);
+    grid-gap: 4px;
+    padding: 4px
+  }
+
+  .card {
+    height: 90px;
+  }
+  .card-body {
+    padding-left: .25em;
+    padding-right: .25em;
+  }
+  .card-title {
+    font-size: 8px;
+  }
+
+  .tool-map {
+
+    grid-template-areas: 
+    "pipelines pipelines pipelines pipelines pipelines debugging debugging debugging debugging debugging "
+    "editors   editors   editors   editors   editors   editors   editors   editors   editors   editors "
+    "misc   misc   misc   misc   misc   misc   misc   misc   misc   misc "
+    "builds   builds   builds   builds   builds   abstractions   abstractions   abstractions   abstractions   abstractions   "
+    "platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   ";
+
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .tool-map header {
+    font-weight: bold;
+    font-size:smaller;
+  }
+}
