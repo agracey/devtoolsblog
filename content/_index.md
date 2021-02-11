@@ -19,6 +19,8 @@ Note that this is very much a continual work in progress and as I get feedback a
 
 # Tools Map
 
+As reviews are available, they will light up on this map and be clickable!
+
 {{<tools-map >}}
 
 ### Why not just use the published CNCF Landscape?
