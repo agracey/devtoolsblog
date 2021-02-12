@@ -31,11 +31,6 @@ Helm 3 charts are templated yaml files that produce various Kubernetes objects. 
 
 It also keeps a copy of each version in a Custom Resource which allows for you to pull the currently installed config, edit it, and then make an update. From experience, this really helps when you have multiple people who might have made configuration changes.
 
-Each Chart installation is tied to a namespace and is limited to the Roles bound to the current user.
-
-
-(TODO: complete)
-
 
 # Review
 
@@ -52,7 +47,7 @@ Each Chart installation is tied to a namespace and is limited to the Roles bound
 
 While the older Helm versions of Helm used a component called Tiller to manage installs, Helm 3 does it's work client side and uses the Kubernetes access controls. Due to this, different permissions will be required based on what the chart itself needs. 
 
-For demo purposes, I'll be using my Cluster Admin to do the installs. 
+For demo purposes, I'll be using my Cluster Admin user to do the installs. 
 
 ### Installation Steps
 
@@ -106,7 +101,8 @@ Note: I'm not really a Wordpress developer or user so it's unlikely I'll create 
 
 The first thing to do is create a mysql database instance. With this, we need a deployment and a service to let wordpress talk to it.
 
-Note: Some of the needed values are Helm magic. I'm simplifying some of the indirection ()
+Note: I've simplified some of the helm magic available for ease of writing.
+
 
 Let's create a new file called `templates/mysql-deploy.yaml`: 
 
@@ -211,8 +207,6 @@ mysql:
 ingress:
   hostname: 127.0.0.1.omg.howdoi.website
 ```
-
-
 
 
 #### Wordpress
@@ -344,8 +338,6 @@ kubectl get pods
 I can then browse to wordpress-demo.192.168.1.12.omg.howdoi.website and get the standard WordPress guided install page! Yay!
 
 
-
-
 ## Pros
 
 - Industry standard
@@ -368,3 +360,4 @@ It's likely not worth creating a helm chart just for a Wordpress site, but it's 
 # Conclusion
 
 Helm is still the go to choice for most any team looking to distribute their application in an easy to consume way. If you are building an app that is more than one or two components or configuration options, you will likely want to package them into a chart. 
+
