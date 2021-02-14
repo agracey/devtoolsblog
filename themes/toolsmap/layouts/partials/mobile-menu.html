@@ -1,5 +1,5 @@
 <div class="mobile-menu js-mobile-menu">
-    <header><a href="/"><img src="images/suse-product-brand.svg" alt="SUSE product brand logotype"></a>
+    <header><a href="/"><h1 style="color: white; font-size: large; margin-top:10px;">Dev Tools Roundup</h1></a>
         <div class="burger-menu js-burger-menu"><a><i class="eos-icons">menu</i></a></div>
     </header>
     <nav class="display-nav">
@@ -15,7 +15,7 @@
   
           <li class="menu-item menu-dropdown">
             <input class="js-dropdown-toggle" id="documentation-toggle" type="checkbox">
-            <label class="menu-title" for="documentation-toggle"><i class="eos-icons">school</i><span class="menu-title-content">{{ humanize .Title }}</span><i class="eos-icons eos-18 float-right menu-expand">keyboard_arrow_down</i></label>
+            <label class="menu-title" for="documentation-toggle"><i class="eos-icons">{{.Params.Icon}}</i><span class="menu-title-content">{{ humanize .Title }}</span><i class="eos-icons eos-18 float-right menu-expand">keyboard_arrow_down</i></label>
             <ul class="menu-dropdown-list menu-element">
                 <li class="menu-collapsed-title">{{ humanize .Title }}</li>
 

@@ -30,9 +30,9 @@ I went back and forth on this if I should or not. I think there's a lot of value
 The goal here is to try to pull out the specific pieces and options that a developer (or team of developers) would need to know in a way that is accessible without the larger infrastructure background.
 
 
-## I just want to develop! Where should I start?
+## I Just Want to Write My Code! Where Should I Start?
 
-Even with this smaller landscape, there are still a lot of choices. If you are just getting started, here are a few stacks to try:
+Even with this smaller landscape, there are still too many choices. If you are just getting started, here are a few stacks to try:
 
 ### Gitlab
 
@@ -79,11 +79,23 @@ I'm still adopting my pipelines to this but I really like it do far. I know the 
 
 I customized Code Server to run on top of the OpenSUSE base container. This let's me use all the tools that I'm already familiar with without any issues! 
 
+### More Professional
+
+For more advanced use cases or larger teams, you probably start worrying about longer term supportability and maintenance costs along with how well these tools fit into your larger IT infrastructure.
+
+Sadly, I'm not sure I have an unbiased recommendation at the moment. Once I get some more reviews done, I will edit this with my findings.
 
 ## Contributing
 
-If you know of a tool that should be here, please let me know in the [SUSE Community](https://community.suse.com) (Once it is live!) or open up a issue in Github.
-
-Also, if there's anything that's not clear in any of these reviews or I'm making any mistaken assumptions, please let me know! Either in a Github ticket or (preferably) by posting in the [SUSE Community](https://community.suse.com)
+If you want to help by writing a review, let me know by [opening up a draft PR](https://github.com/agracey/devtoolsblog/) with the tool name in the title! I would love the help. The only rule that I have is that any review should be as free of bias as possible. 
 
 
+## Did I Miss Anything?
+
+If you know of a tool that should be here, please let me know in the [SUSE Community](https://community.suse.com) (Once it is live!) or open up a issue on [Github](https://github.com/agracey/devtoolsblog/issues).
+
+## Did I Get Something Wrong?
+
+I'm sure that while learning just enough to get a feel for each of these tools I will make mistakes! I
+
+If there's anything that's not clear in any of these reviews or I'm making any mistaken assumptions, please let me know! Either in a Github ticket or (preferably) by posting in the [SUSE Community](https://community.suse.com)

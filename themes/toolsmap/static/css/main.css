@@ -20,7 +20,7 @@ h1, h2, h3, h4 {
   grid-template-areas: 
     "pipelines pipelines pipelines pipelines pipelines debugging debugging debugging debugging debugging misc "
     "editors   editors   editors   editors   editors   editors   editors   editors   editors   editors   misc "
-    "builds   builds   builds   builds   builds   builds   abstractions   abstractions   abstractions   abstractions   abstractions "
+    "builds   builds   builds   builds   builds   abstractions   abstractions   abstractions   abstractions   abstractions   misc "
     "platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms   platforms ";
 
   grid-gap: 12px;
