@@ -17,7 +17,7 @@
             <input class="js-dropdown-toggle" id="documentation-toggle" type="checkbox">
             <label class="menu-title" for="documentation-toggle"><i class="eos-icons">{{.Params.Icon}}</i><span class="menu-title-content">{{ humanize .Title }}</span><i class="eos-icons eos-18 float-right menu-expand">keyboard_arrow_down</i></label>
             <ul class="menu-dropdown-list menu-element">
-                <li class="menu-collapsed-title">{{ humanize .Title }}</li>
+                <li class="menu-collapsed-title">{{ .Params.Realtitle }}</li>
 
                 {{ range .Pages }}
                   <li><a class="menu-title js-select-current js-feature-flag {{ if false }} selected {{end}}" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
