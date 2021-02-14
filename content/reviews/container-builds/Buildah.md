@@ -90,19 +90,156 @@ Support for more operating systems can be found at https://github.com/containers
 For this sample, we are going to create a simple Nginx container based on OpenSUSE.
 
 
+#### Base Layer
 
-First things, to run rootless, we will likely need to enter a "shared namespace" so that our permissions can bridge between different container contexts:
+Create the base layer and hold on to the name for later steps.
+
+For ease of instruction we will start with a OpenSUSE specific base layer (which I choose to trust). For containers without dependencies (where the application is a compiled binary), you can use `buildah from scratch` to start with an empty layer.
 
 ```bash
-buildah unshare
+ctr=$(buildah from "registry.opensuse.org/opensuse/leap:15.2")
 ```
 
-This will put us into a new shell.
+NOTE: For most scripts it’s easier to just capture it in the first step and just use it as a variable. If you are doing this manually,the value can be found as the Container ID in the output of:
 
-To start a new container build we can run:
+```bash
+buildah containers
+```
+
+#### Installing packages
+
+Now that we have the base layers of the container, let’s add to it. There are two ways to go about this: 
+- Mount the container filesystem and use zypper (or any package manager) to install into it
+- Run zypper (or any package manager) from inside the container
+- Copy only relevant files into the right directory
+
+Each of these options have their time and place. As we are running rootless, we cannot run our package manager from the host so the first option is out. Since we want to use our package manager to install nginx and all of it's needed dependencies, we will run zypper from inside the container.
+
+This is done with:
+
+```bash
+buildah run $ctr zypper in nginx
+```
+
+This will need to update the registry metadata then will install nginx into the container.
+
+#### Committing the layer
+
+It's good practice to split your images into logical layers. This does two things: You don't have to continually rebuild your image from scratch, and different nodes can share any common layers between them instead of having to re-download full images each time.
+
+We can commit the layer and then continue building onto it using:
+
+```bash
+image=$(buildah commit --rm $ctr leap_with_nginx)
+ctr=$(buildah from $image)
+echo $ctr
+```
+
+Note: The `--rm` flag instructs buildah to remove the previous working container after committing. This way we don't waste storage.
 
 
-(TODO: complete)
+#### Writing Nginx Config
+
+Next we will write the nginx config needed to tell it how to host our files.
+
+To do this we will mount the container filesystem to a place we can access from the host. There is a little weirdness in this step sicne we are running as a non-root user and we will need to run in a shared user namespace. To do this, run:
+
+```bash
+podman unshare 
+```
+
+This will start a shell in a separate linux namespace where we have more permissions but are still safely segmented out from the rest of the system. Please note that the variables we were using don't come with us (which is the reason for echoing it out in the previous step).
+
+To mount the container we are working on we can use:
+
+```bash
+ctr="leap_with_nginx-working-container" # or the output of `echo $ctr` above
+ctr_wd=$(buildah mount $ctr)
+```
+
+The stored output tells you where to find the root of the container's filesystem.
+
+Using your favorite editor, create a new file at $ctr_wd/app/nginx.conf and add the following content. This will instruct nginx to listen on port 8080, run as an executable, and host files from /app/srv. Note that you will need to create the containing folder with `mkdir -p $ctr_wd/app`.
+
+```nginx.conf
+worker_processes 1;
+error_log stderr;
+daemon off;
+pid nginx.pid;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
+  sendfile on;
+  keepalive_timeout 65;
+
+  server {
+    listen 8080;
+  
+    location / {
+      root /app/srv/;
+      index index.html index.htm;
+    }
+  }
+}
+```
+
+#### Adding Manifest
+
+We need to add some config into the container manifest so it knows what to run when started. This is done with:
+
+```bash
+buildah config --cmd '' $ctr
+buildah config --entrypoint '["/usr/sbin/nginx","-c","/app/nginx.conf","-p","/app/"]' $ctr
+```
+
+This will set up our container to start nginx with our newly created configuration when the container starts and to not attempt to run the default bash command.
+
+#### Committing Layer
+
+With those changes, we should commit again and then remount it with the following sequence of commands:
+
+```bash
+image=$(buildah commit --rm $ctr leap_with_nginx_configured)
+ctr=$(buildah from $image)
+ctr_wd=$(buildah mount $ctr)
+```
+
+#### Adding content
+
+Now, with the new layer built and mounted, let’s actually add content to host into it:
+
+```bash
+mkdir $ctr_wd/app/srv
+echo "Hello, World! I'm stuck in a container!" > $ctr_wd/app/srv/index.html
+```
+
+While this is a trivial example so I just echo in some content. From this shared namespace, I can copy over files from the host as well.
+
+#### Committing Final Layer
+
+Lastly, let’s commit that container for us to run:
+
+```bash
+buildah commit --rm $ctr my_hello_world
+exit
+```
+
+
+#### Running Container Locally
+
+Now that the container is created, we can run it locally using `podman` with:
+
+```bash
+podman run -p 8080:8080 my_hello_world
+```
+
+This will run with the terminal attached so you can see any output from the command. When you browse to `http://127.0.0.1:8080/` you should see the hello world in the browse and will likely see an error about a missing favicon in the command line. We didn't add one so that's expected.
+
 
 #### Signing the Container (TODO: learn and write)
 
@@ -118,6 +255,7 @@ To start a new container build we can run:
 - Permissions can be a bit confusing when in nested namespaces
 - More complicated than similar tools
 - Might be difficult to tie into CI/CD systems
+- Documentation is a bit hard to follow if you aren't very familiar with how containers are built
 
 ## Ideal Projects
 
@@ -142,6 +280,3 @@ You can more easily edit container manifests with buildah before committing givi
 When I first started using Buildah (mid 2019?), it was by far the best tool for the job as I wanted more flexibility than a Dockerfile could give. I think that at the time of this writing, I will probably reach for it less often as the more advanced use cases are filled by other newer tools. 
 
 That said, if you want something extremely flexible to build images in or are running up against limitations, it's a very good choice!
-
-
-(TODO: complete)
