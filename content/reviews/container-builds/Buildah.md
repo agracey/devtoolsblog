@@ -85,7 +85,7 @@ This change also affects the full [CRI-O](https://cri-o.io), [Podman](podman.io)
 
 Support for more operating systems can be found at https://github.com/containers/buildah/blob/master/install.md
 
-### Sample
+## Sample
 
 For this sample, we are going to create a simple Nginx container based on OpenSUSE.
 

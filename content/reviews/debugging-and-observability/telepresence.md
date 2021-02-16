@@ -1,6 +1,6 @@
 ---
 title: "Telepresence"
-date: 2020-12-07T08:05:30-08:00
+date: 2021-02-16
 draft: true
 
 github: "https://github.com/telepresenceio/telepresence"
@@ -10,17 +10,54 @@ sponsors: []
 tagline_1: "Local development against a remote Kubernetes or OpenShift cluster"
 tagline_2: ""
 
+author: "Andrew Gracey"
+author_bio: "Developer Advocate at SUSE, focusing on making Cloud Native development less painful"
 
+version: 0.109
 ---
 
-# Summary
+
 
 # Experience
 
+
+# Design
+
+
+
 # Review
+
+## Prior knowledge needed
+
+- 
+
+
+## Installation
+
+
+
+
+### What privileges are needed
+
+- Root or Sudo on a Linux host to install cli
+- 
+
+### Steps
+
+
+## Sample
+
 
 ## Pros
 
+- 
+
 ## Cons
+
+- 
+
+## Ideal Projects
+
+
 
 # Conclusion
