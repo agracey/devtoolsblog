@@ -156,8 +156,8 @@ app.get('/weather/:addresses', async (req, res)=>{
 
     for(let i = 0; i<addresses.length; i++){
       const addr = addresses[i]
-      const current = await getTempFromAPIandCache(addr)
       const past = await getTempsFromCache(addr)
+      const current = await getTempFromAPIandCache(addr)
       ret.push( {addr, temps:[current, ...past].map(({temp})=>(parseInt(temp)))})
     }
 
@@ -240,8 +240,8 @@ Let's quickly refactor this code and replace the for loop with some async and pr
 
 ``` js
 const ret = await Promise.all(addresses.map( async (addr)=>{
-  const current = await getTempFromAPIandCache(addr)
   const past = await getTempsFromCache(addr)
+  const current = await getTempFromAPIandCache(addr)
   return {addr, temps:[current, ...past].map(({temp})=>(parseInt(temp)))}
 }))
 ```
@@ -293,7 +293,21 @@ const getTempFromAPIandCache = async (addr) =>{
 
 This will count all of the times we request a temp from `openweathermap.org`. 
 
-In the prometheus 
+Once you call the API a few times, browse to `http://127.0.0.1:9090` and input the expression:
+
+``` promql
+request_count
+```
+
+This will show you how many times the api had been called the last time prometheus queried the metrics. This timing is controlled by the configuration yaml we wrote while installing prometheus.
+
+We can do the same with:
+
+``` promql
+temp_req_count
+```
+
+
 
 ## Pros
 
