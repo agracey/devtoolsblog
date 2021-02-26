@@ -307,6 +307,9 @@ We can do the same with:
 temp_req_count
 ```
 
+### Logging
+
+At the time of my writing this, the logging portion of OpenTelemtry was not finished yet. There are several drafts of how this would be done and it looks really good in my opinion! I'll update this to include logging as soon as I hear that there are libraries published to leverage.
 
 
 ## Pros
@@ -318,7 +321,12 @@ temp_req_count
 ## Cons
 
 - Requires code additions to gain most value
+- A bit new so some libraries are still in flux
 
 # Conclusion
 
+OpenTelemetry has enough other projects backing it that I don't see it going away. It solves a very real need and can make debugging problems after they happen in production possible again without needing to build crazy systems of quarantining pods that are acting up.
 
+Done right, it can also be a good way to bridge the gap between the developer and operator by giving a common touch point for both teams. Developers want good feedback when something goes wrong in production and operators want early warning before those things go wrong. 
+
+If you are building an application in a cloud native way, you should be instrumenting your code. OpenTelemetry gives an easy way to go about that!
