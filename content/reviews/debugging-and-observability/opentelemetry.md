@@ -41,8 +41,13 @@ For example, for a simple three level architecture:
 
 ![Basic Three Level Architecture with External Auth](/screenshots/span_example_arch.png)
 
+We have some idea of the relationship between components but it might be hard to gauge relative load or diagnose where potential bottlenecks might be. With tracing we can find the relationships more quickly because you see a call stack like view:
 
 ![Example Of Spans across Components](/screenshots/span_example.png)
+
+Now we can see that each click might generate two database calls and a call to the external authentication provider. From my rough sketch, you might also assume that some of the potential slow down is actually in view layer since there's a lot of space on the right where there's nothing under "Redraw Comment View".
+
+The ability to pass context between components to get a full stack view of each call is very useful!
 
 # Review
 
