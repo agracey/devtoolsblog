@@ -1,7 +1,7 @@
 ---
 title: "Opentelemetry"
 date: 2020-12-07T08:05:22-08:00
-draft: true
+draft: false
 
 github: "https://github.com/open-telemetry"
 homepage: "https://opentelemetry.io"
@@ -33,14 +33,18 @@ It used to be popular to output different streams of logs to different files but
 
 ## Tracing
 
-Tracing is a comparatively new idea here. It allows you to see how a request or event propagates through the entire system. 
+Tracing is a comparatively new idea here. It allows you to see how a user action or event propagates through the entire system by allowing components to let each other know the parent span that originated the request.
 
 Traces are built up of "spans" which can relate to each other in different ways. For example, you could have a parent span that tracks the duration of an event created from a button click which would track each of the requests made as child spans. Those child spans would then have their own child spans internal to the API (for example an auth middleware). 
 
+For example, for a simple three level architecture:
+
+![Basic Three Level Architecture with External Auth](/screenshots/span_example_arch.png)
+
+
+![Example Of Spans across Components](/screenshots/span_example.png)
+
 # Review
-
-
-
 
 ## Prior knowledge needed
 
