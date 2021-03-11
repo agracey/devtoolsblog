@@ -60,7 +60,7 @@ sudo zypper in helm
 The tool itself is a golang binary so it's also possible to [install by downloading](https://github.com/helm/helm/releases). 
 
 
-### Sample
+## Sample
 
 As this is a Developer tools blog, let's build a sample chart that runs a default wordpress instance and mysql then sets up the environment variables and routing. 
 
