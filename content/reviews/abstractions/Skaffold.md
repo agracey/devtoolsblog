@@ -1,7 +1,7 @@
 ---
 title: "Skaffold"
-date: 2020-12-04T08:48:36-08:00
-draft: true
+date: 2021-03-22
+draft: false
 
 github: "https://github.com/GoogleContainerTools/skaffold"
 homepage: "https://skaffold.dev"
@@ -9,6 +9,10 @@ icon: "google.png"
 sponsors: []
 tagline_1: "Easy and Repeatable Kubernetes Development"
 tagline_2: ""
+
+
+author: "Andrew Gracey"
+author_bio: "Developer Advocate at SUSE, focusing on making Cloud Native development less painful"
 ---
 
 
