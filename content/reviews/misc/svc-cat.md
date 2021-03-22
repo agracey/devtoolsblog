@@ -27,7 +27,26 @@ I've used a few versions of the OpenService Broker before and also managed a pub
 
 ## Design
 
-Todo: list CRDs and their interactions
+#### Service Classes
+
+A service class defines what a service is. For example, a PostgreSQL database or analytics API.
+
+#### Service Plans
+
+A service plan allows for some options within the choices. For example, with a database, you could have individual plans for shared databases vs private vs cloud based, etc. While the API for each is the same, the characteristics will be different for each use-case.
+
+#### Service Instance
+
+A service instance is just that, it's an instance of a service that's been created with the broker. You can create, update, and delete these objects and the broker will do the same for the provisioned infrastructure.
+
+#### Service Binding
+
+A service binding gives a way to publish connection information to an application. Historically, in Cloud Foundry, this was done by the VCAP_SERVICES environment variable. In Kubernetes, this is done with a Secret that can be attached to a container in a variety of ways.
+
+
+#### Service Broker
+
+A service broker is responsible for managing how each of the API objects relate to the infrastructure being provisioned. It needs to make sure that the infrastructure is kept in in-sync with what the platform expects.
 
 # Review
 
@@ -229,4 +248,4 @@ The Open Service Broker API is an idea that I feel like hasn't gotten enough lov
 
 What I would like to see is a v3 of the spec that is simpler by taking advantage of Kubernetes features and Cloud Native methodologies.
 
-As it stands, Service Catalog is definitely useful when building platforms for developers to use but might not be a great stand alone tool. 
+As it stands, Service Catalog is definitely useful when building platforms for developers to use but might not be a great stand alone tool.
